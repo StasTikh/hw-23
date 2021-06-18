@@ -29,6 +29,13 @@ function guessGame(){
     if (guessNum == randomNumber) {
         answerOut.innerHTML = `Correct! </br> You win, number is ${guessNum}! </br> It's was ${guessCount + 1} try.`;
         document.getElementById('myNum').value = '';
+        let tag = document.querySelector('dialog');
+        setTimeout(function(){
+            tag.close();
+            location.reload();
+        }, 2000);
+        
+
     }
     else if (guessNum > randomNumber){
         answerOut.innerHTML = `You wrong! </br> Number is smaller. </br> It's try number ${guessCount + 1}`;
@@ -43,11 +50,13 @@ function guessGame(){
         document.getElementById('myNum').value = '';
     }
     if (guessCount == 10) {
-        answerOut.innerHTML = 'Sorry! You lose';
+        answerOut.innerHTML = `Sorry! </br> You lose. </br> Right number: is ${randomNumber}`;
         let tag = document.querySelector('dialog');
         setTimeout(function(){
             tag.close();
-        }, 1000);
+            location.reload();
+        }, 2000);
+        
     }
 }
 
