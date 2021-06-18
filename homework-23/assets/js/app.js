@@ -9,7 +9,7 @@ function closeGame() {
     tag.close();
     document.getElementById('outAnswer').style.display = "none";
     guessCount = 0;
-    randomNumber = Math.floor((Math.random() * 100) + 1);    
+    location.reload();    
     }
 
 
@@ -24,17 +24,13 @@ function guessGame(){
    let guessNum = document.getElementById('myNum').value;
    let answerOut = document.getElementById('outAnswer');
    document.getElementById('outAnswer').style.display = "block";
-
+   
  
     if (guessNum == randomNumber) {
         answerOut.innerHTML = `Correct! </br> You win, number is ${guessNum}! </br> It's was ${guessCount + 1} try.`;
         document.getElementById('myNum').value = '';
-        let tag = document.querySelector('dialog');
-        setTimeout(function(){
-            tag.close();
-            location.reload();
-        }, 2000);
-        
+        document.getElementById('myNum').style.display = "none"
+        document.getElementById('numButton').style.display = "none"
 
     }
     else if (guessNum > randomNumber){
@@ -51,12 +47,8 @@ function guessGame(){
     }
     if (guessCount == 10) {
         answerOut.innerHTML = `Sorry! </br> You lose. </br> Right number: is ${randomNumber}`;
-        let tag = document.querySelector('dialog');
-        setTimeout(function(){
-            tag.close();
-            location.reload();
-        }, 2000);
-        
+        document.getElementById('myNum').style.display = "none"
+        document.getElementById('numButton').style.display = "none"
     }
 }
 
@@ -73,3 +65,9 @@ function isNumber() {
 }
 
 
+// let tag = document.querySelector('dialog');
+        // setTimeout(function(){
+        //     tag.close();
+        //     location.reload();
+        // }, 2000);
+        // guessCount = 0;
