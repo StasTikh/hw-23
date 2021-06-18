@@ -28,7 +28,6 @@ function guessGame(){
  
     if (guessNum == randomNumber) {
         answerOut.innerHTML = `Correct! </br> You win, number is ${guessNum}! </br> It's was ${guessCount + 1} try.`;
-        document.getElementById('myNum').value = '';
         document.getElementById('myNum').style.display = "none"
         document.getElementById('numButton').style.display = "none"
 
