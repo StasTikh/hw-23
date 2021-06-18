@@ -1,0 +1,12 @@
+button {
+    margin-left: 27%;
+}
+
+#noNum {
+    display: none;
+}
+
+dialog {
+    width: 50%;
+    height: 50%;    
+}
