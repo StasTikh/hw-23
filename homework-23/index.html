@@ -21,7 +21,7 @@
         <div class="card-body">
           <h5 class="card-title"><i class="fas fa-dice"></i>
             Guess Game</h5>
-          <p class="card-text">I've choosed a random number between 1 and 100. Try to guess it maximum in 10 turns.I'll tell you if your guess was too high or too low.</p>
+          <p class="card-text">I've choosed a random number between 1 and 100. Try to guess it maximum in 10 turns. I'll tell you if your guess was too high or too low.</p>
           <a id="openG" onclick="openGame()" class="btn btn-primary">Let's Go!</a>
         </div>
       </div>
@@ -43,6 +43,7 @@
         </div>
         <button id="numButton" class="text-center btn btn-primary w-50" onclick="guessGame()">Roll the dice!</button>
         <p class="text-center mt-3" id="outAnswer"></p>
+        <button id="reloadButton" class="text-center btn btn-danger w-50" onclick="newGame()">Restart</button>
         </div>
 
     </dialog>
