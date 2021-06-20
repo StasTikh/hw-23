@@ -1,5 +1,5 @@
 
-var randomNumber = Math.floor((Math.random() * 100) + 1);
+randomNumber = Math.floor((Math.random() * 100) + 1);
 var guessCount = 0;
 var guessMax = 10;
 
@@ -23,10 +23,32 @@ function guessGame(){
     document.getElementById('outAnswer').style.display = "block";
    
     if (guessNum == randomNumber) {
-        answerOut.innerHTML = `Correct! </br> You win, number is ${guessNum}! </br> It's was ${guessCount + 1} try.`;
-        document.getElementById('myNum').value = '';
-        document.getElementById('myNum').style.display = "none"
-        document.getElementById('numButton').style.display = "none"
+
+        if(guessCount == 0) {
+            answerOut.innerHTML = `Correct! </br> You win, number is ${guessNum}! </br> It's was ${guessCount + 1}st try.`;
+            document.getElementById('myNum').value = '';
+            document.getElementById('myNum').style.display = "none";
+            document.getElementById('numButton').style.display = "none";
+            document.getElementById('reloadButton').style.display = "block";
+        } else if (guessCount == 1) {
+            answerOut.innerHTML = `Correct! </br> You win, number is ${guessNum}! </br> It's was ${guessCount + 1}nd try.`;
+            document.getElementById('myNum').value = '';
+            document.getElementById('myNum').style.display = "none";
+            document.getElementById('numButton').style.display = "none";
+            document.getElementById('reloadButton').style.display = "block";
+        } else if (guessCount === 2) {
+            answerOut.innerHTML = `Correct! </br> You win, number is ${guessNum}! </br> It's was ${guessCount + 1}rd try.`;
+            document.getElementById('myNum').value = '';
+            document.getElementById('myNum').style.display = "none";
+            document.getElementById('numButton').style.display = "none";
+            document.getElementById('reloadButton').style.display = "block";
+        } else {
+            answerOut.innerHTML = `Correct! </br> You win, number is ${guessNum}! </br> It's was ${guessCount + 1}th try.`;
+            document.getElementById('myNum').value = '';
+            document.getElementById('myNum').style.display = "none";
+            document.getElementById('numButton').style.display = "none";
+            document.getElementById('reloadButton').style.display = "block";
+        }
 
     } else if (guessNum < randomNumber){
         if(guessNum == "") {
@@ -77,4 +99,9 @@ function isNumber() {
         document.getElementById('numButton').style.display = "block";
     }
 
+}
+
+function newGame() {
+    location.reload();
+    
 }
