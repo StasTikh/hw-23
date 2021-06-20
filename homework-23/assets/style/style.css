@@ -2,7 +2,7 @@ button {
     margin-left: 27%;
 }
 
-#noNum {
+#noNum, #reloadButton {
     display: none;
 }
 
